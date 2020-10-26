@@ -18,10 +18,26 @@
         console.log("Servidor Desconectado");
       });
 
-      socket.emit("message", { name: "Diego" });
+      //   socket.emit("message", { name: "Diego" });
 
-      socket.on("message", function (payload) {
-        console.log("Escuchando:", payload);
+      //   socket.on("message", function (payload) {
+      //     console.log("Escuchando:", payload);
+      //   });
+
+      //   socket.emit("emitir-mensaje", {
+      //     name: "Diegokyo",
+      //     message: "Hola Mundo!",
+      //     mensaje2: "Genial!!!!",
+      //   });
+
+      socket.on("nuevo-mensaje", function (payload) {
+        console.log("message of flutter:", payload);
+      });
+
+      socket.on("active-bands", function (payload) {
+        console.clear();
+        console.log(payload);
+        console.table(payload);
       });
     </script>
     <h1>Acceso denegado</h1>
